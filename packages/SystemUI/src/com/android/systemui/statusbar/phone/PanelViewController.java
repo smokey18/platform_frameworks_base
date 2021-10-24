@@ -189,6 +189,8 @@ public abstract class PanelViewController {
 
     protected abstract void onExpandingFinished();
 
+    protected boolean mDoubleTapToSleepEnabled;
+
     protected void onExpandingStarted() {
     }
 
@@ -1313,7 +1315,7 @@ public abstract class PanelViewController {
                         onTrackingStarted();
                     }
                     if (isFullyCollapsed() && !mHeadsUpManager.hasPinnedHeadsUp()
-                            && !mStatusBar.isBouncerShowing()) {
+                            && !mStatusBar.isBouncerShowing() && !mDoubleTapToSleepEnabled) {
                         startOpening(event);
                     }
                     break;
